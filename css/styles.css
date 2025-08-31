@@ -1,0 +1,63 @@
+html, body {
+    background-color: gray;
+}
+
+.custom-card {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.carousel-item img {
+  height: 300px; /* O el alto que prefieras para tus imágenes */
+  object-fit: cover; /* Mantiene la proporción y cubre el espacio */
+}
+
+/* Para las flechas del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* Ejemplo: Cambiar a azul */
+  filter: invert(30%) sepia(90%) saturate(2000%) hue-rotate(200deg) brightness(80%) contrast(100%);
+  /* Si quieres blanco, podrías usar: filter: invert(100%); */
+  /* Si quieres negro, podrías usar: filter: brightness(0); */
+}
+
+/* Animación del cursor que parpadea */
+@keyframes blink-caret {
+  from, to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: black; /* Cambia a tu color de texto */
+  }
+}
+
+/* El elemento donde se aplicará el efecto de tipeo */
+#typing-text {
+  font-family: monospace; /* Fuente de ancho fijo para un efecto más realista */
+  border-right: .15em solid black; /* El "cursor" */
+  white-space: nowrap; /* Evita que el texto se divida en líneas */
+  overflow: hidden; /* Oculta el texto que aún no se "tipeó" */
+  animation: 
+    typing 8s steps(52, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* Animación del "tipeo" */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

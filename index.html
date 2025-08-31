@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Servilo Ya! - Serví soluciones, Servilo Ya</title>
+    <link rel="shortcut icon" href="img/mini logo.png" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div
+          class="container-fluid d-flex align-items-center justify-content-between"
+        >
+          <a class="navbar-brand" href="#">
+            <img
+              src="img/pseudologo.webp"
+              alt="Logo"
+              width="130"
+              height="54"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown link
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex align-items-center">
+            <button
+              type="button"
+              class="btn btn-outline-primary m-1"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Iniciar Sesión
+            </button>
+            <button
+              type="button"
+              class="btn btn-success m-1"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+            >
+              Registrarse
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Modal con form para login -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm" method="POST" action="/ruta-de-tu-servidor">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1"
+                  >Recordarme</label
+                >
+              </div>
+              <div class="form-text">
+                ¿Olvidaste la contraseña? <a href="#">Recuperala acá</a>.
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para registro -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      data-bs-backdrop="static"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Registrarse</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm" method="POST" action="/ruta-de-tu-servidor">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="tipo_doc" class="form-label"
+                  >Tipo de documento</label
+                >
+                <select
+                  id="tipo_doc"
+                  name="tipo_doc"
+                  class="form-select"
+                  required
+                >
+                  <option value="Cedula">Cédula</option>
+                  <option value="Rut">RUT</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="documento" class="form-label"
+                  >Número de documento</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="documento"
+                  name="documento"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="repeat-password" class="form-label"
+                  >Repetir contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="repeat-password"
+                  name="repeat-password"
+                  required
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1"
+                  >Acepto los
+                  <a href="#">términos y servicios de la página</a>.</label
+                >
+              </div>
+              <div class="form-text">
+                ¿Ya estás registrado?
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                  data-bs-dismiss="modal"
+                  >Inicia sesión aquí</a
+                >
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="flex-grow-1">
+      <p class="text-center fs-1 fw-bold">
+        <span id="typing-text"></span>
+      </p>
+      <p class="text-center fst-italic">
+        Más de 100 clientes y profesionales confian en nosotros como plataforma.
+        <a href="#about">¿Querés saber mas sobre nosotros?</a>
+      </p>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="card p-4 shadow custom-card">
+          <form>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="¿Qué servicio necesitas?"
+              />
+            </div>
+            <div class="mb-3">
+              <select class="form-select">
+                <option disabled selected class="text-muted">
+                  Todas las categorías
+                </option>
+                <option value="plomeria">Plomería</option>
+                <option value="electricidad">Electricidad</option>
+                <option value="limpieza">Limpieza</option>
+                <option value="jardineria">Jardinería</option>
+                <option value="carpinteria">Carpinteria</option>
+                <option value="pintura">Pintura</option>
+                <!-- ... -->
+              </select>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path
+                    d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+                  />
+                </svg>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ubicación"
+                aria-label="Ubicacion"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              <div class="badge text-wrap" style="width: 6rem">
+                Encontra tu solución ya!
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
+      <p class="text-center">
+        ¿Estás buscando ofrecer tus servicios?
+        <span class="fw-bold">te invitamos a <a href="">registrarte!</a></span>
+      </p>
+      <hr />
+      <p class="text-center fs-2 fw-bold">
+        Estos son los servicios mas populares:
+      </p>
+      <div class="w-100 mx-auto">
+        <div
+          id="carouselExampleInterval"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div class="d-block w-100">
+                <div class="card mb-3" style="max-width: 700px; margin: 0 auto">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="img/albañil.png"
+                        class="img-fluid rounded-start"
+                        alt="Imagen de albañil"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Servicio de Albañilería</h5>
+                        <p class="card-text">
+                          Profesionales especializados en construcciones y
+                          reformas.
+                        </p>
+                        <p class="card-text">
+                          <small class="text-body-secondary"
+                            >¡Contacta ya!</small
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="2000">
+              <div class="d-block w-100">
+                <div class="card mb-3" style="max-width: 700px; margin: 0 auto">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="img/fontanero.png"
+                        class="img-fluid rounded-start"
+                        alt="Imagen de fontanero"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Servicio de Plomería</h5>
+                        <p class="card-text">
+                          Soluciones rápidas para fugas, desatascos e
+                          instalaciones de tuberías.
+                        </p>
+                        <p class="card-text">
+                          <small class="text-body-secondary"
+                            >Disponible 24/7</small
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="d-block w-100">
+                <div class="card mb-3" style="max-width: 700px; margin: 0 auto">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="img/jardinero.png"
+                        class="img-fluid rounded-start"
+                        alt="Imagen de jardinero"
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Servicio de Jardinería</h5>
+                        <p class="card-text">
+                          Expertos en diseño y mantenimiento de jardines.
+                        </p>
+                        <p class="card-text">
+                          <small class="text-body-secondary"
+                            >Consulta por presupuesto</small
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <hr />
+      <p class="text-center fs-2 fw-bold" id="about">SOBRE NOSOTROS</p>
+      <p class="text-center">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, qui
+        soluta possimus eveniet quos, repudiandae alias dolor illo harum ullam
+        doloribus, esse laboriosam ducimus nobis nam pariatur? Aliquam, fuga
+        magni!
+      </p>
+    </main>
+
+    <!-- Script JS -->
+    <script src="js/script.js"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <footer>
+      <p>
+        2025 ServiloYa - Plataforma de Servicios. Todos los derechos reservados.
+      </p>
+      <p>
+        Proyecto BT Tecnologías de la Información - Instituto Tecnológico
+        Superior "Arias Balparda"
+      </p>
+    </footer>
+  </body>
+</html>
